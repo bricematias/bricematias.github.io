@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Présentation Portofolio</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="presentation.css" />
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+	<link rel="stylesheet" href="flip3d.css" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+	<header>
+		<a href="#" class="logo">Portfolio</a>
+		<div class="toggle" onclick="toggleMenu();"></div>
+		<ul class="menu">
+			<li><a href="#home" onclick="toggleMenu();">Accueil </a></li>
+			<li><a href="#about" onclick="toggleMenu();">Présentation</a></li>
+			<li><a href="#services" onclick="toggleMenu();">Services</a></li>
+			<li><a href="#work" onclick="toggleMenu();">Expériences</a></li>
+			<li><a href="#testimonial" onclick="toggleMenu();">Stage</a></li>
+			<li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
+		</ul>
+	</header>
+	<section class="banner" id="home">
+		<div class="textBx">
+			<h2><span>Brice MATIAS</span></h2>
+			<h3>Etudiant de 23 ans en BTS SIO</h3>
+			<!-- METTRE MON CV --> <a href="cvBrice.pdf" download class="btn btn-primary">Mon CV</a>
+		</div>
+
+	</section>
+	<section class="about" id="about">
+		<div class="heading">
+			<h2>Présentation</h2>
+		</div>
+		<div class="content">
+			<div class="contentBx w50">
+				<center>
+					<h3>Qui suis-je?</h3>
+				</center>
+				<p>Après être rentré dans le monde professionnel en tant que équipier polyvant chez Macdonald, je suis
+					devenu intérimaire dans l'entreprise Continental.<br>J'étais chargé de maintenance
+					sur une ligne automatisée pour des pièces de voiture. Suite à 18 mois en tant que intérimaire on m'a
+					proposé un CDD de 1an que j'ai directement accepté.
+					Après ces 1 an il n'y à pas eu d'embauche donc j'ai décidé de reprendre mes études afin de réaliser
+					un projet qui me tennais à coeur celui de devenir développeur informatique.
+					C'est pour cela que je me suis réinscrit sur Parcoursup afin de faire le BTS SIO (Services
+					informatiques aux organisations)
+					<br><br>J'ai donc choisi l'option SLAM (solutions logicielles et applications métiers) qui répond au
+					mieux à ma demande pour avoir des connaissance dans le domaine du développement.
+					Ci-joint un descriptif de comment ce comporte ce BTS.
+				</p>
+			</div>
+			<div class="w50">
+				<div id="slider">
+					<figure>
+						<img src="img1.jpg">
+						<img src="bts2.jpg">
+						<img src="bts3.jpg">
+					</figure>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="services" id="services">
+		<div class="heading white">
+			<h2>Mes services</h2>
+			<p>Programmation</p>
+		</div>
+		<div class="content">
+			<div class="servicesBx">
+				<img src="icon1.png">
+				<h2>HTML</h2>
+				<p>Est le langage de balisage conçu pour représenter les pages web. Ce langage permet : d’écrire de
+					l’hypertexte, d’où son nom, de structurer sémantiquement la page, de mettre en forme le contenu, de
+					créer des formulaires de saisie,. </p>
+				<div class="progress">
+					<div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar"
+						style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+			</div>
+			<div class="servicesBx">
+				<img src="icon2.png">
+				<h2>CSS</h2>
+				<p>CSS est un langage informatique qui décrit la présentation des documents HTML.<br>Le CSS est utilisé
+					dans la conception de sites web. </p>
+				<div class="progress">
+					<div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar"
+						style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+
+			</div>
+			<div class="servicesBx">
+				<img src="icon3.png">
+				<h2>Python</h2>
+				<p>Python est un langage de programmation interprété, multi-paradigme et multiplateformes.
+					Il favorise la programmation impérative structurée, fonctionnelle et orientée objet. </p>
+				<div class="progress">
+					<div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar"
+						style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+			</div>
+			<div class="servicesBx">
+				<img src="icon4.png">
+				<h2>JAVA</h2>
+				<p>Java est un langage de programmation orienté objet Une particularité de Java est que les logiciels
+					écrits dans ce langage sont compilés vers une représentation binaire intermédiaire qui peut être
+					exécutée dans une machine virtuelle Java. </p>
+				<div class="progress">
+					<div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar"
+						style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+			</div>
+			<div class="servicesBx">
+				<img src="icon5.png">
+				<h2>JAVASCRIPT</h2>
+				<p>JavaScript est un langage de programmation qui permet de créer du contenu mis à jour de façon
+					dynamique,
+					de contrôler le contenu multimédia, d'animer des images, et tout ce à quoi on peut penser. </p>
+				<div class="progress">
+					<div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar"
+						style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+			</div>
+			<div class="servicesBx">
+				<img src="icon6.png">
+				<h2>C++</h2>
+				<p>C++ est un langage de programmation compilé permettant la programmation sous de multiples paradigmes,
+					dont la programmation procédurale, la programmation orientée objet et la programmation générique.
+				</p>
+				<div class="progress">
+					<div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar"
+						style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="work" id="work">
+		<div class="heading">
+			<h2>Mes expériences professionnelles</h2>
+			<p>Lorem ipsum dolorsit amet, consectetur adipisicing elit</p>
+		</div>
+		<div class="box-container">
+			<div class="box-item">
+				<div class="flip-box">
+					<div class="flip-box-front text-center" style="background-image: url('macdo.jpg');">
+					</div>
+					<div class="flip-box-back text-center" style="background-image: url('macdofloux.jpg');">
+						<div class="inner color-white">
+							<h3 class="flip-box-header">Custom Domains hover</h3>
+							<p>A short sentence describing this callout is.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="box-item">
+				<div class="flip-box">
+					<div class="flip-box-front text-center" style="background-image: url('continental.jpg');">
+					</div>
+					<div class="flip-box-back text-center" style="background-image: url('continentalfloux.jpg');">
+						<div class="inner color-white">
+							<h3 class="flip-box-header">Custom Domains hover</h3>
+							<p>A short sentence describing this callout is.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+	<section class="testimonial" id="testimonial">
+		<div class="heading">
+			<h2>Mes projets </h2>
+			<p>Présentation de mes différents projetq que j'ai pu réaliser durant mes 2 années de BTS Services
+				Informatiques Aux Organisations.</p>
+		</div>
+		<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-indicators">
+			  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+
+			</div>
+			<div class="carousel-inner">
+			  <div class="carousel-item active">
+				  <div class="d-block w-100">
+					<center><img src="continental.jpg"></center>
+					<button class="btn btn-primary">click</button>
+					</div>
+			  </div>
+			  <div class="carousel-item">
+				<center><img src="macdo.jpg" class="d-block w-50"></center>
+				<button class="btn btn-primary">click</button>
+			  </div>
+
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Next</span>
+			</button>
+
+		  </div>
+		
+	</section>
+	<section class="contact" id="contact">
+		<div class="heading white">
+			<h2>Contacter Moi</h2>
+			<p>Si vous avez des questions n'hésiter pas à me contacter.</p>
+		</div>
+		<div class="content">
+			<div class="contactInfo">
+				<h3>Contact Info</h3>
+				<div class="contactInfoBx">
+					<div class="box">
+						<div class="icon">
+							<i class="fa fa-map-marker"></i>
+						</div>
+						<div class="text">
+							<h3>Adresse</h3>
+							<p>49 Avenue du Comminges<br>Cugnaux<br>31270 </P>
+						</div>
+					</div>
+					<div class="box">
+						<div class="icon">
+							<i class="fa fa-phone"></i>
+
+						</div>
+						<div class="text">
+							<h3>Phone</h3>
+							<p>07.83.31.88.53</P>
+						</div>
+					</div>
+					<div class="box">
+						<div class="icon">
+							<i class="fa fa-envelope-o"></i>
+
+						</div>
+						<div class="text">
+							<h3>Email</h3>
+							<p>brice.matias@free.fr</P>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="formBx">
+				<form>
+					<h3>Message Me</h3>
+					<input type="text" name="" placeholder="FullName">
+					<input type="email" name="" placeholder="Email">
+					<textarea placeholder="Your Message"></textarea>
+					<input type="submit" name="" value="Envoyer" onclick="sendMail()" style="width:130px">
+				</form>
+			</div>
+		</div>
+	</section>
+	<div class="copyright">
+		<p>Copyright © 2O21 PortfolioBM. All Right Reserved.</p>
+	</div>
+	<script type="text/javascript">
+		window.addEventListener('scroll', function () {
+			var header = document.querySelector('header');
+			header.classList.toggle('sticky', window.scrollY > 0);
+		});
+		function toggleMenu() {
+			var menuToggle = document.querySelector('.toggle');
+			var menuToggle = document.querySelector('.menu');
+			menuToggle.classList.toggle('active');
+			menu.classList.toggle('active');
+		}
+		function sendMail() {
+			alert("toto")
+		}
+	</script>
+</body>
+
+</html>
