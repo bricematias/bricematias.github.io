@@ -160,3 +160,7 @@
 .carousel-indicators [data-bs-target]{
     background-color: black;
 }
+
+.progress{
+  bottom: 100%;
+}
