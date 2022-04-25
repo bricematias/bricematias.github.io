@@ -1,0 +1,289 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1:3306
+-- Généré le : Dim 07 nov. 2021 à 10:58
+-- Version du serveur :  5.7.31
+-- Version de PHP : 7.3.21
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Base de données : `projetbtscsharp`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `actions`
+--
+
+DROP TABLE IF EXISTS `actions`;
+CREATE TABLE IF NOT EXISTS `actions` (
+  `idAction` int(11) NOT NULL,
+  `dateAction` varchar(30) DEFAULT NULL,
+  `heureAction` varchar(30) DEFAULT NULL,
+  `heureFinAction` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`idAction`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `appartenir`
+--
+
+DROP TABLE IF EXISTS `appartenir`;
+CREATE TABLE IF NOT EXISTS `appartenir` (
+  `idMembre` int(11) NOT NULL,
+  `idTicket` int(11) NOT NULL,
+  PRIMARY KEY (`idMembre`,`idTicket`),
+  KEY `idTicket` (`idTicket`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `attribuer`
+--
+
+DROP TABLE IF EXISTS `attribuer`;
+CREATE TABLE IF NOT EXISTS `attribuer` (
+  `idTech` int(11) NOT NULL,
+  `idTicket` int(11) NOT NULL,
+  PRIMARY KEY (`idTech`,`idTicket`),
+  KEY `idTicket` (`idTicket`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `contrat`
+--
+
+DROP TABLE IF EXISTS `contrat`;
+CREATE TABLE IF NOT EXISTS `contrat` (
+  `idContrat` int(11) NOT NULL,
+  `dateAchat_loc` varchar(30) DEFAULT NULL,
+  `garantie` varchar(20) DEFAULT NULL,
+  `fournisseur` varchar(50) DEFAULT NULL,
+  `idMateriel` int(11) NOT NULL,
+  PRIMARY KEY (`idContrat`),
+  UNIQUE KEY `idMat?riel` (`idMateriel`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `materiels`
+--
+
+DROP TABLE IF EXISTS `materiels`;
+CREATE TABLE IF NOT EXISTS `materiels` (
+  `idMateriel` int(11) NOT NULL AUTO_INCREMENT,
+  `processeur` varchar(50) DEFAULT NULL,
+  `memoire` varchar(50) DEFAULT NULL,
+  `disque` varchar(50) DEFAULT NULL,
+  `logicielInstaller` varchar(50) DEFAULT NULL,
+  `nomMateriel` varchar(50) DEFAULT NULL,
+  `idMembre` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idMateriel`),
+  KEY `idMembre` (`idMembre`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `materiels`
+--
+
+INSERT INTO `materiels` (`idMateriel`, `processeur`, `memoire`, `disque`, `logicielInstaller`, `nomMateriel`, `idMembre`) VALUES
+(3, '8go', '32', 'Dur', 'w10,avast,google Chrome', 'W1à', NULL),
+(5, 'maxwww', 'maxwww', 'maxsww', 'maxwww', 'Maxwww', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `mener`
+--
+
+DROP TABLE IF EXISTS `mener`;
+CREATE TABLE IF NOT EXISTS `mener` (
+  `idTicket` int(11) NOT NULL,
+  `idAction` int(11) NOT NULL,
+  PRIMARY KEY (`idTicket`,`idAction`),
+  KEY `idAction` (`idAction`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `pass`
+--
+
+DROP TABLE IF EXISTS `pass`;
+CREATE TABLE IF NOT EXISTS `pass` (
+  `idReg` varchar(50) NOT NULL,
+  `idMembre` int(11) NOT NULL,
+  PRIMARY KEY (`idReg`,`idMembre`),
+  KEY `idMembre` (`idMembre`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `personnel`
+--
+
+DROP TABLE IF EXISTS `personnel`;
+CREATE TABLE IF NOT EXISTS `personnel` (
+  `idMembre` int(11) NOT NULL AUTO_INCREMENT,
+  `matriculePers` varchar(50) DEFAULT NULL,
+  `dateEmbauche` varchar(30) DEFAULT NULL,
+  `nomPers` varchar(50) DEFAULT NULL,
+  `prenomPerso` varchar(50) DEFAULT NULL,
+  `adresse` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`idMembre`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `personnel`
+--
+
+INSERT INTO `personnel` (`idMembre`, `matriculePers`, `dateEmbauche`, `nomPers`, `prenomPerso`, `adresse`) VALUES
+(2, '1', '03/11/2021', 'mat', 'brice', 'missak manouchian'),
+(7, NULL, 'dimanche 7 novembre 2021', 'matias', 'brice', 'missak manouchia,'),
+(8, '', 'dimanche 7 novembre 2021', 'test', 'test', 'test'),
+(9, NULL, 'dimanche 7 novembre 2021', 'xx', 'xx', 'xx'),
+(10, '21', 'dimanche 7 novembre 2021', 'xx', 'xx', 'xx');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `realiser`
+--
+
+DROP TABLE IF EXISTS `realiser`;
+CREATE TABLE IF NOT EXISTS `realiser` (
+  `idTech` int(11) NOT NULL,
+  `idAction` int(11) NOT NULL,
+  PRIMARY KEY (`idTech`,`idAction`),
+  KEY `idAction` (`idAction`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `regions`
+--
+
+DROP TABLE IF EXISTS `regions`;
+CREATE TABLE IF NOT EXISTS `regions` (
+  `idReg` varchar(50) NOT NULL,
+  `nomRegion` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`idReg`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `responsable`
+--
+
+DROP TABLE IF EXISTS `responsable`;
+CREATE TABLE IF NOT EXISTS `responsable` (
+  `nomResp` varchar(20) NOT NULL,
+  `matResp` varchar(10) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `responsable`
+--
+
+INSERT INTO `responsable` (`nomResp`, `matResp`) VALUES
+('Matias', '030298');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `technicien`
+--
+
+DROP TABLE IF EXISTS `technicien`;
+CREATE TABLE IF NOT EXISTS `technicien` (
+  `idTech` int(11) NOT NULL AUTO_INCREMENT,
+  `nomTech` varchar(50) DEFAULT NULL,
+  `prenomTech` varchar(50) DEFAULT NULL,
+  `niveauIntervTech` varchar(50) NOT NULL,
+  `formationTech` varchar(50) DEFAULT NULL,
+  `competenceTech` varchar(50) DEFAULT NULL,
+  `adresse` varchar(30) DEFAULT NULL,
+  `dateEmbauche` varchar(50) NOT NULL,
+  `matriculeTech` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idTech`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `technicien`
+--
+
+INSERT INTO `technicien` (`idTech`, `nomTech`, `prenomTech`, `niveauIntervTech`, `formationTech`, `competenceTech`, `adresse`, `dateEmbauche`, `matriculeTech`) VALUES
+(1, 'XX', 'XX', 'XX', 'XX', 'XX', 'XX', 'samedi 6 novembre 2021', 10),
+(3, 'CCBBB', 'BB', 'XX', 'XX', 'XX', 'BBBB', 'samedi 6 novembre 2021', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `ticketincident`
+--
+
+DROP TABLE IF EXISTS `ticketincident`;
+CREATE TABLE IF NOT EXISTS `ticketincident` (
+  `idTicket` int(11) NOT NULL AUTO_INCREMENT,
+  `problemeIncident` varchar(50) DEFAULT NULL,
+  `materielConcern` varchar(50) DEFAULT NULL,
+  `niveauUrgence` int(11) DEFAULT NULL,
+  `etat` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`idTicket`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `ticketincident`
+--
+
+INSERT INTO `ticketincident` (`idTicket`, `problemeIncident`, `materielConcern`, `niveauUrgence`, `etat`) VALUES
+(3, 'dsjsofjd', 'sdsd', 3, NULL),
+(4, 'dsjsofjd', 'sdsd', 3, 'En cours'),
+(5, 'dsjsofjd', 'sdsd', 3, 'En cours'),
+(6, 'dsjsofjd', 'sdsd', 3, NULL),
+(8, 'XX', 'XX', 3, NULL),
+(9, 'XX', 'XX', 3, NULL),
+(10, 'XX', 'XX', 3, NULL),
+(11, 'XX', 'XX', 3, NULL),
+(12, 'XX', 'XX', 3, NULL),
+(13, 'XX', 'XX', 3, NULL),
+(15, 'XX', 'XX', 3, NULL);
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `mener`
+--
+ALTER TABLE `mener`
+  ADD CONSTRAINT `mener_ibfk_2` FOREIGN KEY (`idAction`) REFERENCES `actions` (`idAction`);
+
+--
+-- Contraintes pour la table `pass`
+--
+ALTER TABLE `pass`
+  ADD CONSTRAINT `pass_ibfk_1` FOREIGN KEY (`idReg`) REFERENCES `regions` (`idReg`);
+
+--
+-- Contraintes pour la table `realiser`
+--
+ALTER TABLE `realiser`
+  ADD CONSTRAINT `realiser_ibfk_2` FOREIGN KEY (`idAction`) REFERENCES `actions` (`idAction`);
+COMMIT;
