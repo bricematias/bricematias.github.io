@@ -96,7 +96,8 @@ header ul li a{
 	font-size: 18px;
 }
 header ul li a:hover {
-color: white !important;
+color: black !important;
+
 }
 header.sticky ul li a{
 	color: #111;
